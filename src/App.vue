@@ -3,26 +3,25 @@
 </template>
 
 <script>
-//2. 模拟实现instanceof
-const _instanceof = (left, right) => {
-  right = right.prototype;
-  left = left.__proto__;
-  while (true) {
-    if (left == null) {
-      return false;
-    }
-    if (left == right) {
-      return true;
-    }
-    left = left.__proto__;
-  }
+// 3. this 指向
+function fn() {
+  console.log(this); // this = undefined
+}
+const obj = {
+  name: 'test',
+  a() {
+    console.log(this.a); // this = obj.a
+    setTimeout(function () {
+      console.log(this.a); // this = obj
+    }, 1000);
+  },
+  b() {
+    console.log(this); // this = window
+    fn();
+  },
 };
-const arr = new Array();
-const obj = new Object();
-console.log(_instanceof(arr, Object));
-console.log(_instanceof(obj, Array));
-console.log(arr instanceof Object);
-console.log(obj instanceof Object);
+obj.a();
+obj.b();
 export default {};
 </script>
 
