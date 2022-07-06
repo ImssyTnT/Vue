@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Login from './components/views/Login.vue';
-import Form from './components/views/Form.vue';
+import Login from './components/views/LoginIn.vue';
+import Form from './components/views/FormIn.vue';
 export default {
   components: {
     Login,
