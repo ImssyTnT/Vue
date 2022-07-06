@@ -1,19 +1,20 @@
 <template>
   <div>
     <Login></Login>
-    <Form></Form>
   </div>
 </template>
 
 <script>
-import Login from './components/views/LoginIn.vue';
-import Form from './components/views/FormIn.vue';
+import Login from './views/LoginIn.vue';
 export default {
   components: {
     Login,
-    Form,
   },
 };
 </script>
 
-<style></style>
+<style>
+body {
+  background-color: #f9f9f9;
+}
+</style>
